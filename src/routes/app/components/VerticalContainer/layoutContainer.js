@@ -38,7 +38,7 @@ function VerticalContainer(props) {
     return (
         <React.Fragment>
             <CssBaseline />
-                <Header title="Paulo" />
+                <Header title="Paulo" loPu={props} />
             <Container className="mb-50" maxWidth="lg">
                 <main>
                         {renderPage(props)}

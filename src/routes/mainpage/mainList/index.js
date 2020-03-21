@@ -100,7 +100,7 @@ class bargePage extends Component{
       const { loading } = this.props.mainState;
 
       return (
-          <Grid container spacing={4}>
+          <Grid container spacing={4} className="mt-30">
               {featuredPosts.map(post => (
                     <FeaturedPost key={post.title} post={post} />
               ))}

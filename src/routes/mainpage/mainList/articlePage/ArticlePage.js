@@ -21,6 +21,7 @@ import { saveRating } from "../../../../redux/ducks/mainpage";
 const useStyles = makeStyles({
     root: {
         maxWidth: "100%",
+        marginTop: "30px"
     },
     media: {
         height: 140,
