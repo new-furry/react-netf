@@ -5,10 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
+import { red } from '@material-ui/core/colors';
+import Avatar from '@material-ui/core/Avatar';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
+import Button from "@material-ui/core/Button";
 import * as mainHelper from "../../../../helpers/mainURL";
 
 const useStyles = makeStyles({
@@ -19,7 +22,12 @@ const useStyles = makeStyles({
         flex: 1,
     },
     cardMedia: {
-        width: 160,
+        // width: 160,
+        height: 0,
+        paddingTop: '56.25%', // 16:9
+    },
+    avatar: {
+        backgroundColor: red[500],
     },
 });
 
@@ -40,30 +48,30 @@ function FeaturedPost(props) {
     };
 
     return (
-            <Grid item xs={12} md={6}>
-                <CardActionArea onClick={() => goArticle(title, description, date)}>
-                    <Card className={classes.card}>
-                        <div className={classes.cardDetails}>
-                            <CardContent>
-                                <Typography component="h2" variant="h5">
-                                    {post.title}
-                                </Typography>
-                                <Typography variant="subtitle1" color="textSecondary">
-                                    {post.date}
-                                </Typography>
-                                <Typography variant="subtitle1" paragraph>
-                                    {post.description}
-                                </Typography>
-                                <Typography variant="subtitle1" color="primary">
-                                    Continue reading...
-                                </Typography>
-                            </CardContent>
-                        </div>
-                        <Hidden xsDown>
-                            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
-                        </Hidden>
-                    </Card>
-                </CardActionArea>
+            <Grid item xs={12} md={4}>
+                <Card className={classes.root}>
+                    <CardHeader
+                        avatar={
+                            <Avatar color={red} aria-label="recipe" className={classes.avatar}>
+                                R
+                            </Avatar>
+                        }
+                        title={post.title}
+                        subheader="March 22, 2020"
+                    />
+                    <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+                    <CardContent>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {post.description}
+                        </Typography>
+                    </CardContent>
+                    <CardActions disableSpacing>
+                        <Button onClick={() => goArticle(title, description, date)}
+                                variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: "3%"}} disableElevation>
+                            See More
+                        </Button>
+                    </CardActions>
+                </Card>
             </Grid>
     );
 }

@@ -15,6 +15,9 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 //import components
 import VideoPlayer from "../../../../components/VideoComponent/VideoPlayer";
 
+//import actions
+import { saveRating } from "../../../../redux/ducks/mainpage";
+
 const useStyles = makeStyles({
     root: {
         maxWidth: "100%",
@@ -33,13 +36,20 @@ const StyledRating = withStyles({
     },
 })(Rating);
 
-
-
 function ArticlePage(props){
     const classes = useStyles();
 
-        const { location, mainState } = props;
+    const goBack = () => {
+      props.history.push('/app/main');
+    };
+
+    const callSaveAction = (event, value) => {
+        props.saveRating(value);
+    };
+
+        const { location } = props;
         const { title, description, date } = location.state;
+        const { rating } = props.mainState.mainState;
         return (
             <React.Fragment>
                 <Card className={classes.root}>
@@ -63,9 +73,10 @@ function ArticlePage(props){
                                 <StyledRating
                                     style={{float: "right"}}
                                     name="customized-color"
-                                    defaultValue={2}
+                                    defaultValue={rating}
                                     getLabelText={value => `${value} Heart${value !== 1 ? 's' : ''}`}
                                     precision={0.5}
+                                    onChange={(event, value) => callSaveAction(event, value)}
                                     icon={<FavoriteIcon fontSize="inherit" />}
                                 />
                             </Typography>
@@ -75,11 +86,9 @@ function ArticlePage(props){
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
-                            Share
-                        </Button>
-                        <Button size="small" color="primary">
-                            Learn More
+                        <Button onClick={goBack}
+                                variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: '2%'}} disableElevation>
+                            Go Back
                         </Button>
                     </CardActions>
                 </Card>
@@ -94,6 +103,6 @@ const mapStateToProps = ({ mainState }) => {
 export default connect(
     mapStateToProps,
     {
-
+        saveRating
     }
 )(ArticlePage);

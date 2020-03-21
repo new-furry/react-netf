@@ -31,11 +31,8 @@ export default function Footer(props) {
     const { description, title } = props;
 
     return (
-        <footer style={{opacity:0.3}} className={classes.footer}>
+        <footer style={{opacity:0.5}} className={classes.footer}>
             <Container maxWidth="lg">
-                <Typography color="primary" variant="h4" align="center" gutterBottom>
-                    {title}
-                </Typography>
                 <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
                     {description}
                 </Typography>

@@ -1,36 +1,34 @@
-import * as types from "./mainTypes";
+import * as Types from "./mainTypes";
 
 const INIT_STATE = {
-    bargeList: {
-        nowShowing: "All Barges",
-        options: ["All Barges", "Added Barges", "Pending Barges"],
-        action: false,
-        loading: false,
-        tableData: [
-            {
-                id:"dummyId",
-                name:"dummyBarge",
-                status:"ready",
-                position:"Singapore",
-                fuelSupplier:"test",
-                map:"dummy",
-                delete:"dummy"
-            },
-            {
-                id:"dummyId",
-                name:"dummyBarge",
-                status:"ready",
-                position:"Singapore",
-                fuelSupplier:"test",
-                map:"dummy",
-                delete:"dummy"
-            },
-        ]
+    mainState: {
+        rating: localStorage.getItem('rating'),
     }
 };
 
+let rating = '';
+
 export default (state = INIT_STATE, action) => {
     switch (action.type) {
+        case Types.SAVE_RATING:
+            rating = action.payload.data;
+            localStorage.setItem('rating', rating);
+            return {
+                ...state,
+                mainState: {
+                    ...state.mainState,
+                    rating: rating
+                }
+            };
+        case Types.SAVE_RATING_SUCCESS:
+            return {
+                ...state
+            };
+        case Types.SAVE_RATING_FAILURE:
+            return {
+                ...state
+            };
+
         default:
             return {
                 ...state

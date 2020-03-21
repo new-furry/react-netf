@@ -38,10 +38,9 @@ function VerticalContainer(props) {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container className="mb-50" maxWidth="lg">
                 <Header title="Paulo" />
+            <Container className="mb-50" maxWidth="lg">
                 <main>
-                    <MainFeaturedPost post={mainFeaturedPost} />
                         {renderPage(props)}
                 </main>
             </Container>
