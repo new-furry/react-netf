@@ -48,7 +48,7 @@ export default function Header(props) {
             <AppBar position="static" style={{backgroundColor: "white"}}>
                 <Toolbar variant="dense">
                     {/*<IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">*/}
-                        <img onClick={goMain} style={{width: "100px"}} src={logo} alt="logo"/>
+                        <img onClick={goMain} style={{width: "150px", cursor: 'pointer'}} src={logo} alt="logo"/>
                     {/*</IconButton>*/}
                 </Toolbar>
             </AppBar>

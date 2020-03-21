@@ -49,14 +49,14 @@ function ArticlePage(props){
     };
 
         const { location } = props;
-        const { title, description, date } = location.state;
+        const { id, title, description, date, video } = location.state;
         const { rating } = props.mainState.mainState;
         return (
             <React.Fragment>
                 <Card className={classes.root}>
                     <CardActionArea>
                         <VideoPlayer
-                            url="https://v.stayqrious.info/public/Sounddemo.mp4"
+                            url={video}
                             activities={[
                                 {
                                     pausePoint: 230000,
@@ -81,7 +81,7 @@ function ArticlePage(props){
                                     icon={<FavoriteIcon fontSize="inherit" />}
                                 />
                             </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
+                            <Typography style={{marginTop: '20px', marginBottom: '20px'}} variant="body2" color="textSecondary" component="p">
                                 {description}
                             </Typography>
                         </CardContent>

@@ -34,15 +34,18 @@ const useStyles = makeStyles({
 function FeaturedPost(props) {
     const classes = useStyles();
     const { post } = props;
-    const { title, date, description, image, imageText } = post;
+    const { id, title, date, description, image, imageText, video } = post;
 
     const goArticle = (articleTitle) => {
         props.history.push({
             pathname: mainHelper.mainArticlePage,
+            // id: id,
             state: {
-                title: articleTitle,
+                id: id,
+                title: post.title,
                 description: description,
-                date: date
+                date: date,
+                video: video
             }
         });
     };
@@ -50,26 +53,21 @@ function FeaturedPost(props) {
     return (
             <Grid item xs={12} md={4}>
                 <Card className={classes.root}>
+                    <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
                     <CardHeader
-                        avatar={
-                            <Avatar color={red} aria-label="recipe" className={classes.avatar}>
-                                R
-                            </Avatar>
-                        }
                         title={post.title}
                         subheader="March 22, 2020"
                     />
-                    <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
                     <CardContent>
                         <Typography variant="body2" color="textSecondary" component="p">
                             {post.description}
                         </Typography>
                     </CardContent>
                     <CardActions disableSpacing>
-                        <Button onClick={() => goArticle(title, description, date)}
-                                variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: "3%"}} disableElevation>
-                            See More
-                        </Button>
+                            <Button onClick={() => goArticle(id, title, description, date, video)}
+                                    variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: "3%"}} disableElevation>
+                                See More
+                            </Button>
                     </CardActions>
                 </Card>
             </Grid>
