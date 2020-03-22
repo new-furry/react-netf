@@ -10,5 +10,4 @@ const reducers = combineReducers({
     mainState: MainReducer,
 });
 
-
 export default reducers;

@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 //import components
-import Helmet from "../../../components/Helmet";
-import PageTitleBar from "../../../components/PageTitleBar/PageTitleBar";
-import * as mainHelper from "../../../helpers/mainURL"
 import FeaturedPost from "../../app/components/Components/FeaturedPost";
 import Grid from "@material-ui/core/Grid";
 
@@ -112,13 +109,7 @@ const featuredPosts = [
 ];
 
 class bargePage extends Component{
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-      const { loading } = this.props.mainState;
-
       return (
           <Grid container spacing={4} className="mt-30">
               {featuredPosts.map(post => (

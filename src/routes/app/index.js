@@ -8,9 +8,6 @@ import ThemeProvider from "./components/ThemeProvider";
 //Vertical Layout
 import VerticalContainer from "./components/VerticalContainer";
 
-//Main Routes (App level)
-
-
 // Error pages
 import NotFound from "./components/ErrorPages/Err404";
 
@@ -31,10 +28,13 @@ function App(props) {
             if (location.pathname === "/") {
                 return <Redirect to={"/login"} />;
             }
+            break;
         case true:
             if (location.pathname === "/") {
                 return <Redirect to={"/app/main"} />;
             }
+            break;
+
         default:
             break;
     }
@@ -47,7 +47,7 @@ function App(props) {
                     component={VerticalContainer}
                 />
 
-                <Route component={NotFound} />              //404 route
+                <Route component={NotFound} />
             </Switch>
         </ThemeProvider>
     );

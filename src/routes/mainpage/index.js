@@ -9,7 +9,7 @@ function bargeSwitcher() {
     return (
         <div>
             <Switch>
-                {/* ------- /Barges ------- */}
+                {/* ------- /Main ------- */}
                 <Route
                     exact
                     path={url.mainListPage}

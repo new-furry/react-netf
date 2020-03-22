@@ -20,14 +20,6 @@ export default (state = INIT_STATE, action) => {
                     rating: rating
                 }
             };
-        case Types.SAVE_RATING_SUCCESS:
-            return {
-                ...state
-            };
-        case Types.SAVE_RATING_FAILURE:
-            return {
-                ...state
-            };
 
         default:
             return {

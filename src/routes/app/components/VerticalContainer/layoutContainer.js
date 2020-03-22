@@ -1,11 +1,9 @@
 import React from "react";
-import {Route, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Header from './../Components/Header';
-import MainFeaturedPost from './../Components/MainFeaturedPost';
 import Footer from './../Components/Footer';
 
 function renderPage(props) {
@@ -15,25 +13,7 @@ function renderPage(props) {
     );
 }
 
-const useStyles = makeStyles(theme => ({
-    mainGrid: {
-        marginTop: theme.spacing(3),
-    },
-}));
-
 function VerticalContainer(props) {
-    const { location, history } = props;
-
-    const classes = useStyles();
-
-    const mainFeaturedPost = {
-        title: 'Paulo Test React Project Like Netflex',
-        description:
-            "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-        image: 'https://source.unsplash.com/random',
-        imgText: 'main image description',
-        linkText: 'Continue reading…',
-    };
 
     return (
         <React.Fragment>

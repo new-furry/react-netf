@@ -4,7 +4,6 @@ import Loadable from "react-loadable";
 // rct page loader
 import RctPageLoader from "../../components/RctPageLoader";
 
-// barges management
 
 export const main_list_component = Loadable({
     loader: () => import("./mainList"),

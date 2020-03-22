@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 import { connect } from "react-redux";
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -49,7 +49,7 @@ function ArticlePage(props){
     };
 
         const { location } = props;
-        const { id, title, description, date, video } = location.state;
+        const { title, description, video } = location.state;
         const { rating } = props.mainState.mainState;
         return (
             <React.Fragment>
