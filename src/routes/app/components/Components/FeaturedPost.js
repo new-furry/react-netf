@@ -38,8 +38,7 @@ function FeaturedPost(props) {
 
     const goArticle = (articleTitle) => {
         props.history.push({
-            pathname: mainHelper.mainArticlePage,
-            // id: id,
+            pathname: mainHelper.mainArticlePage(id),
             state: {
                 id: id,
                 title: post.title,

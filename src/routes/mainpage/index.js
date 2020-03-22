@@ -18,8 +18,7 @@ function bargeSwitcher() {
 
                 <Route
                     exact
-                    path={`${url.mainArticlePage}`}
-                    // path={`${url.mainArticlePage}/:id`}
+                    path={`${url.mainListPage}/article/:id`}
                     component={async.main_article_component}
                 />
 
