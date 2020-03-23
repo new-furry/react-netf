@@ -17,19 +17,21 @@ const App = (props) => {
         <Fragment>
             <HeaderContainer />
             <Switch>
-                <Container className="mb-50" maxWidth="lg">
-                    <Route
-                        exact
-                        path="/app/main"
-                        component={MainPage}
-                    />
+                <Fragment>
+                    <Container className="mb-50" maxWidth="lg">
+                        <Route
+                            exact
+                            path="/app/main"
+                            component={MainPage}
+                        />
 
-                    <Route
-                        exact
-                        path={`/app/main/article/:id`}
-                        component={ArticlePage}
-                    />
-                </Container>
+                        <Route
+                            exact
+                            path={`/app/main/article/:id`}
+                            component={ArticlePage}
+                        />
+                    </Container>
+                </Fragment>
             </Switch>
         </Fragment>
     );

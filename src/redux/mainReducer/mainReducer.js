@@ -2,11 +2,11 @@ import * as Types from "./mainTypes";
 
 const INIT_STATE = {
     mainState: {
-        rating: localStorage.getItem('rating'),
+        rating: parseFloat(localStorage.getItem('rating')),
     }
 };
 
-let rating = '';
+let rating = 0;
 
 export default (state = INIT_STATE, action) => {
     switch (action.type) {
