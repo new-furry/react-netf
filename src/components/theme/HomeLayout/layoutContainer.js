@@ -10,7 +10,7 @@ function renderPage(props) {
     );
 }
 
-const VerticalContainer = (props) => {
+const LayoutContainer = (props) => {
 
     return (
         <Fragment>
@@ -26,4 +26,4 @@ export default connect(
     {
 
     }
-)(withRouter(VerticalContainer));
+)(withRouter(LayoutContainer));

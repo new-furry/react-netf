@@ -37,7 +37,7 @@ const StyledRating = withStyles({
     },
 })(Rating);
 
-function ArticleContainer(props){
+const ArticleContainer = (props) =>{
     const classes = useStyles();
 
     const goBack = () => {

@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 import { Header } from "../components/Header/Header";
 
-const VerticalContainer = (props) => {
+const HeaderContainer = (props) => {
 
     const goMain = () => {
         props.history.push('/app/main');
@@ -21,4 +21,4 @@ export default connect(
     {
 
     }
-)(withRouter(VerticalContainer));
+)(withRouter(HeaderContainer));

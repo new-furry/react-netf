@@ -3,11 +3,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import HeaderContainer from "./HeaderContainer";
-import AppContainer from "../components/theme/MainStructureComponent/layoutContainer";
+import AppContainer from "../components/theme/HomeLayout/layoutContainer";
 import MainPage from "./HomeContainer";
 import ArticlePage from "./ArticleContainer";
 
-function App(props) {
+const App = (props) => {
     const { location } = props;
 
     if (location.pathname === "/") {
@@ -33,7 +33,6 @@ function App(props) {
             </Switch>
         </Fragment>
     );
-}
+};
 
-// export default App;
 export default connect(null)(App);

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 //import components
-import FeaturedPost from "../components/theme/MainComponent/FeaturedPost";
+import FeaturedPost from "../components/theme/HomeComponent/FeaturedPost";
 import Grid from "@material-ui/core/Grid";
 
 const featuredPosts = [
@@ -108,8 +108,8 @@ const featuredPosts = [
     },
 ];
 
-class bargePage extends Component{
-    render() {
+// class bargePage extends Component{
+const HomeContainer = () => {
       return (
           <Grid container spacing={4} className="mt-30">
               {featuredPosts.map(post => (
@@ -117,7 +117,6 @@ class bargePage extends Component{
               ))}
           </Grid>
       );
-  }
 };
 
 const mapStateToProps = ({ mainState }) => {
@@ -129,4 +128,4 @@ export default connect(
     {
 
     }
-)(bargePage);
+)(HomeContainer);
