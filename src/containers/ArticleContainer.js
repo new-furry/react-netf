@@ -13,10 +13,10 @@ import Rating from '@material-ui/lab/Rating';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 //import components
-import VideoPlayer from "../../components/VideoComponent/VideoPlayer";
+import VideoPlayer from "../components/VideoComponent/VideoPlayer";
 
 //import actions
-import { saveRating } from "../../redux/mainReducer";
+import { saveRating } from "../redux/mainReducer";
 
 const useStyles = makeStyles({
     root: {
@@ -37,7 +37,7 @@ const StyledRating = withStyles({
     },
 })(Rating);
 
-function ArticlePage(props){
+function ArticleContainer(props){
     const classes = useStyles();
 
     const goBack = () => {
@@ -106,4 +106,4 @@ export default connect(
     {
         saveRating
     }
-)(ArticlePage);
+)(ArticleContainer);
