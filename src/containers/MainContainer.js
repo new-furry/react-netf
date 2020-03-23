@@ -1,13 +1,14 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 
 //Vertical Layout
-import VerticalContainer from "./components/VerticalContainer";
+import VerticalContainer from "../components/VerticalContainer";
+import HeaderContainer from "./HeaderContainer";
 
 // Error pages
-import NotFound from "./components/ErrorPages/Err404";
+import NotFound from "../components/ErrorPages/Err404";
 
 /**
  * Initial Path To Check Whether User Is Logged In Or Not
@@ -38,6 +39,8 @@ function App(props) {
     }
 
     return (
+        <Fragment>
+            <HeaderContainer />
             <Switch>
                 <AppEntry
                     path={`${match.url}app`}
@@ -46,6 +49,7 @@ function App(props) {
 
                 <Route component={NotFound} />
             </Switch>
+        </Fragment>
     );
 }
 

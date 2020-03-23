@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 //import components
-import FeaturedPost from "../../app/components/Components/FeaturedPost";
+import FeaturedPost from "../../../components/MainComponent/FeaturedPost";
 import Grid from "@material-ui/core/Grid";
 
 const featuredPosts = [

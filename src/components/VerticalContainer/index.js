@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 
 import AppContainer from "./layoutContainer";
 
-import MainPage from "../../../mainpage/mainList/index"
-import ArticlePage from "../../../mainpage/mainList/articlePage/ArticlePage";
+import MainPage from "../../pages/mainpage/mainList/index"
+import ArticlePage from "../../pages/mainpage/mainList/articlePage/ArticlePage";
 
 class VerticalContainer extends Component {
 

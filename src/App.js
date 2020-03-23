@@ -17,7 +17,7 @@ import MomentUtils from "@date-io/moment";
 import "./assets/scss/main.scss";
 
 // app component
-import App from "./containers/app";
+import App from "./containers/MainContainer";
 
 import { store } from "./redux/store";
 
