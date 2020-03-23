@@ -154,25 +154,25 @@ const HomeContainer = (props) => {
       return (
           <Grid container spacing={4} className="mt-30">
               {featuredPosts.map(post => (
-                  <Grid item xs={12} md={4}>
-                      <Card className={classes.root}>
-                          <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
-                          <CardHeader
-                              title={post.title}
-                              subheader="March 22, 2020"
-                          />
-                          <CardContent>
-                              <Typography variant="body2" color="textSecondary" component="p">
-                                  {post.description}
-                              </Typography>
-                          </CardContent>
-                          <CardActions disableSpacing>
-                              <Button onClick={() => goArticle(post)}
-                                      variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: "3%"}} disableElevation>
-                                  See More
-                              </Button>
-                          </CardActions>
-                      </Card>
+                  <Grid key={post.id} item xs={12} md={4}>
+                          <Card className={classes.root}>
+                              <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+                              <CardHeader
+                                  title={post.title}
+                                  subheader="March 22, 2020"
+                              />
+                              <CardContent>
+                                  <Typography variant="body2" color="textSecondary" component="p">
+                                      {post.description}
+                                  </Typography>
+                              </CardContent>
+                              <CardActions disableSpacing>
+                                  <Button onClick={() => goArticle(post)}
+                                          variant="contained" style={{backgroundColor: "red", color: "white", marginLeft: "3%"}} disableElevation>
+                                      See More
+                                  </Button>
+                              </CardActions>
+                          </Card>
                   </Grid>
               ))}
           </Grid>
