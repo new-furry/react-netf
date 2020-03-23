@@ -11,7 +11,6 @@ import { red } from '@material-ui/core/colors';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import Button from "@material-ui/core/Button";
-import * as mainHelper from "../../../../helpers/mainURL";
 
 const useStyles = makeStyles({
     card: {
@@ -36,7 +35,7 @@ function FeaturedPost(props) {
 
     const goArticle = () => {
         props.history.push({
-            pathname: mainHelper.mainArticlePage(id),
+            pathname: '/app/main/article/'+id,
             state: {
                 id: id,
                 title: post.title,

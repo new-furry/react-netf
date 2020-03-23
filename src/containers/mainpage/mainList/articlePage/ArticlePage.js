@@ -1,4 +1,4 @@
-import React  from "react";
+import React, {Fragment} from "react";
 import { connect } from "react-redux";
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -52,7 +52,7 @@ function ArticlePage(props){
         const { title, description, video } = location.state;
         const { rating } = props.mainState.mainState;
         return (
-            <React.Fragment>
+            <Fragment>
                 <Card className={classes.root}>
                     <CardActionArea>
                         <VideoPlayer
@@ -93,7 +93,7 @@ function ArticlePage(props){
                         </Button>
                     </CardActions>
                 </Card>
-            </React.Fragment>
+            </Fragment>
         );
 };
 

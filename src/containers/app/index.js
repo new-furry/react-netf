@@ -1,9 +1,7 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-//App theme
-import ThemeProvider from "./components/ThemeProvider";
 
 //Vertical Layout
 import VerticalContainer from "./components/VerticalContainer";
@@ -40,7 +38,6 @@ function App(props) {
     }
 
     return (
-        <ThemeProvider>
             <Switch>
                 <AppEntry
                     path={`${match.url}app`}
@@ -49,7 +46,6 @@ function App(props) {
 
                 <Route component={NotFound} />
             </Switch>
-        </ThemeProvider>
     );
 }
 
