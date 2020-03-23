@@ -3,9 +3,9 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import HeaderContainer from "./HeaderContainer";
-import AppContainer from "../components/theme/HomeLayout/layoutContainer";
 import MainPage from "./HomeContainer";
 import ArticlePage from "./ArticleContainer";
+import Container from "@material-ui/core/Container";
 
 const App = (props) => {
     const { location } = props;
@@ -17,7 +17,7 @@ const App = (props) => {
         <Fragment>
             <HeaderContainer />
             <Switch>
-                <AppContainer>
+                <Container className="mb-50" maxWidth="lg">
                     <Route
                         exact
                         path="/app/main"
@@ -29,7 +29,7 @@ const App = (props) => {
                         path={`/app/main/article/:id`}
                         component={ArticlePage}
                     />
-                </AppContainer>
+                </Container>
             </Switch>
         </Fragment>
     );
