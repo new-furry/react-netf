@@ -1,21 +1,18 @@
 /**
  * Redux Store
  */
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import reducers from "../reducers";
 export function configureStore(initialState) {
     const store = createStore(
         reducers,
         initialState,
+        composeWithDevTools(
+            applyMiddleware(),
+        )
     );
-
-    if (module.hot) {
-        // Enable Webpack hot module replacement for reducers
-        module.hot.accept("../reducers", () => {
-            const nextRootReducer = require("../reducers");
-            store.replaceReducer(nextRootReducer);
-        });
-    }
 
     store.subscribe(() => {
        store.getState();

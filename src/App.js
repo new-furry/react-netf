@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //date moment - material ui
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-import moment from "moment";
 import MomentUtils from "@date-io/moment";
 
 /**
@@ -23,7 +22,7 @@ import { store } from "./redux/store";
 
 const MainApp = () => (
     <Provider store={store}>
-        <MuiPickersUtilsProvider utils={MomentUtils} moment={moment}>
+        <MuiPickersUtilsProvider utils={MomentUtils}>
             <Router>
                 <Switch>
                     <Route path="/" component={App}/>

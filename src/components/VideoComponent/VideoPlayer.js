@@ -19,6 +19,11 @@ class VideoPlayer extends PureComponent {
                          width='100%'
                          height='100%'
                          controls
+                         config={{
+                             youtube: {
+                                 playerVars: { showinfo: 1, controls: 1 },
+                             }
+                         }}
                          url={this.props.url} />
                 </div>
         );
