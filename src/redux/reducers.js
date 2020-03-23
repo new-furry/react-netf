@@ -3,7 +3,7 @@
  */
 import { combineReducers } from "redux";
 
-import { MainReducer } from "./ducks/mainpage";
+import { MainReducer } from "./mainReducer";
 
 
 const reducers = combineReducers({

@@ -16,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import VideoPlayer from "../../../../components/VideoComponent/VideoPlayer";
 
 //import actions
-import { saveRating } from "../../../../redux/ducks/mainpage";
+import { saveRating } from "../../../../redux/mainReducer";
 
 const useStyles = makeStyles({
     root: {
