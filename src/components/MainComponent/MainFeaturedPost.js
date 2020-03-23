@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -35,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function MainFeaturedPost(props) {
+const MainFeaturedPost = (props) => {
     const classes = useStyles();
     const { post } = props;
 
@@ -63,6 +62,4 @@ export default function MainFeaturedPost(props) {
     );
 }
 
-MainFeaturedPost.propTypes = {
-    post: PropTypes.object,
-};
+export default MainFeaturedPost;

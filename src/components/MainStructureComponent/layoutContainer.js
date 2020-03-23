@@ -10,7 +10,7 @@ function renderPage(props) {
     );
 }
 
-function VerticalContainer(props) {
+const VerticalContainer = (props) => {
 
     return (
         <Fragment>
@@ -19,7 +19,7 @@ function VerticalContainer(props) {
             </Container>
         </Fragment>
     );
-}
+};
 
 export default connect(
     null,

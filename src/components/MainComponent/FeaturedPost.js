@@ -1,6 +1,5 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -28,7 +27,7 @@ const useStyles = makeStyles({
     },
 });
 
-function FeaturedPost(props) {
+const FeaturedPost = (props) => {
     const classes = useStyles();
     const { post } = props;
     const { id, date, description, video } = post;
@@ -68,10 +67,6 @@ function FeaturedPost(props) {
                 </Card>
             </Grid>
     );
-}
-
-FeaturedPost.propTypes = {
-    post: PropTypes.object,
 };
 
 export default withRouter(FeaturedPost);
