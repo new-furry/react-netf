@@ -3,9 +3,9 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 import HeaderContainer from "./HeaderContainer";
-import MainPage from "./HomeContainer";
-import ArticlePage from "./ArticleContainer";
 import Container from "@material-ui/core/Container";
+
+import * as async from "./AsyncRoutes";
 
 const App = (props) => {
     const { location } = props;
@@ -22,13 +22,13 @@ const App = (props) => {
                         <Route
                             exact
                             path="/app/main"
-                            component={MainPage}
+                            component={async.main_page}
                         />
 
                         <Route
                             exact
                             path={`/app/main/article/:id`}
-                            component={ArticlePage}
+                            component={async.article_page}
                         />
                     </Container>
                 </Fragment>

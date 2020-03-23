@@ -44,13 +44,28 @@ const ArticleContainer = (props) =>{
       props.history.push('/app/main');
     };
 
-    const callSaveAction = (event, value) => {
-        props.saveRating(value);
+    const callSaveAction = (event, id, value) => {
+        let params = {
+            id: id,
+            value: value
+        };
+        props.saveRating(params);
     };
 
         const { location } = props;
-        const { title, description, video } = location.state;
-        const { rating } = props.mainState.mainState;
+        const { id, title, description, video } = location.state;
+
+        const { mainState } = props.mainState;
+
+        let currentRating;
+        let compareId = 'rating'+id;
+        for (let key in mainState) {
+            if (key === compareId) {
+                currentRating = mainState[key];
+                console.log('---------', mainState[key]);
+            }
+        }
+
         return (
             <Fragment>
                 <Card className={classes.root}>
@@ -74,10 +89,10 @@ const ArticleContainer = (props) =>{
                                 <StyledRating
                                     style={{float: "right"}}
                                     name="customized-color"
-                                    defaultValue={rating}
+                                    defaultValue={currentRating}
                                     getLabelText={value => `${value} Heart${value !== 1 ? 's' : ''}`}
                                     precision={0.5}
-                                    onChange={(event, value) => callSaveAction(event, value)}
+                                    onChange={(event, value) => callSaveAction(event, id, value)}
                                     icon={<FavoriteIcon fontSize="inherit" />}
                                 />
                             </Typography>
